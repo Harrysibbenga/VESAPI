@@ -33,7 +33,7 @@ def ves_api():
 
         # set up request headers
         headers = {
-            'x-api-key': os.getenv('REG_LOOKUP_API_KEY'),
+            'x-api-key': 'IRrH9VhM8Da1Efdy7IEhwapHw2lGhVqm2EmsHDuf',
             'Content-Type': 'application/json'
         }
 
