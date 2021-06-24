@@ -19,21 +19,21 @@ def ves_api():
         # get data from json request
         data = request.json
 
-        # format the json data to get the plate number
+        # # format the json data to get the plate number
         plate = format(data['body']['plate'])
 
-        # url used to call the dvla api
+        # url used to call the DVLA API
         url = "https://driver-vehicle-licensing.api.gov.uk/vehicle-enquiry/v1/vehicles"
 
-        # format the plate to required format
-        formatted_plate = "\"" + plate + "\"}"
+        # format of the body request format
+        # "{\n\t\"registrationNumber\": \"AA19AAA\"\n}"
 
         # set up the payload sent to the api
-        payload = "{\"registrationNumber\": " + formatted_plate
+        payload = "{\n\t\"registrationNumber\": \"" + plate + "\n}"
 
         # set up request headers
         headers = {
-            'x-api-key': 'IRrH9VhM8Da1Efdy7IEhwapHw2lGhVqm2EmsHDuf',
+            'x-api-key': os.getenv('REG_LOOKUP_API_KEY'),
             'Content-Type': 'application/json'
         }
 
